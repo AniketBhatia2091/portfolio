@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="./2.css">
+    <script src="https://kit.fontawesome.com/883d459486.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            
+            <nav>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i> 
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                
+                <h1>Hi, I am <span>Aniket Bhatia</span></h1>
+                <p>UI/UX DESIGNER</p>
+                
+            </div>
+        </div>
+    </div>
+    <!-----About---->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/6.png" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="subtitle">About Me</h1>
+                        <p>Welcome to the portfolio of Aniket Bhatia, where creativity meets innovation and passion drives purpose. Aniket is a dynamic individual with a fervent curiosity for exploring the realms of design, technology, and entrepreneurship. With a diverse skill set and an unwavering dedication to excellence, he endeavors to leave an indelible mark on every project he undertakes.
+
+                            Aniket's journey in the world of creativity began with a profound appreciation for aesthetics and functionality. His innate ability to blend artistry with functionality has led him to excel in various fields, including graphic design, web development, and user experience design. Coupled with his relentless pursuit of knowledge, he stays at the forefront of emerging trends, ensuring that his work remains innovative and impactful.</p>
+                
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('Certification')">Certification</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX Designer</span><br>Designing intuitive and engaging user experiences. Where functionality meets aesthetics</li>
+                            <li><span>Graphic Designer</span><br>Crafting visual stories with creativity and precision. Bringing ideas to life through design</li>
+                            <li><span>Web Development</span><br>"Building dynamic web sites with a keen eye for UI/UX design. Bridging functionality and aesthetics seamlessly."</li>
+
+                        </ul>
+                    </div>
+                
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>February 2024-Present</span><br>As a UI/UX Designer and intern at Conceptou, I worked on diverse and challenging projects that honed 
+                                my skills in both user interface and user experience design. I conducted user research, created wireframes and prototypes, and collaborated with cross-functional teams.
+                                 My role involved improving user satisfaction and developing cohesive, visually appealing designs.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2016-2022</span><br>Completed High School Education at Aadhunik Public School</li>
+                            <li><span>2023-Present</span><br>Currently pursuing B.E. CSE at Chitkara University</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Certification">
+                        <ul>
+                            <li> <a class="cert-link" href="https://www.coursera.org/account/accomplishments/verify/TK2NU6A66H3Z?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=course"><span>Foundations of User Experience (UX) Design</span></a><br>I successfully completed the "Foundations of User Experience (UX) Design" course. 
+                                gaining a solid understanding of UX principles and best practices.</li>
+                                <li> <a class="cert-link" href="https://coursera.org/share/da17382f329fd4ef06cc071c6973cb3d"><span>Create High-Fidelity Designs and Prototypes in Figma</span></a><br>I successfully completed the "Create High-Fidelity Designs and Prototypes in Figma" course. gaining expertise in creating detailed, interactive designs..</li>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+<!---Services-->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>Proficient in creating engaging and user-friendly digital experiences through thoughtful design and efficient coding.</p>
+                <a href="https://www.coursera.org/articles/web-designer">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-crop"></i>
+                <h2>UI/UX Design</h2>
+                <p>Versatile UI/UX that helps in transforming complex ideas into seamless and visually appealing user interfaces.</p>
+                <a href="https://www.freecodecamp.org/news/ui-ux-design-guide/">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-app-store-ios"></i>
+                <h2>Design Thinking Expert</h2>
+                <p>Innovative design thinker adept at leveraging empathy, ideation, and prototyping to solve complex problems, fostering creative solutions.</p>
+                <a href="https://www.coursera.org/programs/design-year-1-xdgx3/specializations/uva-darden-design-thinking?collectionId=xqYsl">Learn more</a>
+            </div>                    
+        </div>
+    </div>
+</div>
+
+<!--Portfolio-->
+
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>  
+        <div class="work-list">
+            <div class="work">
+                <img src="images/2.png" alt="">
+                <div class="layer">
+                    <h3>Path-following Robot</h3>
+                    <p>Use of Atmel AtMega-8 with IR sensors to develop autonomous systems that seamlessly navigate through designated paths</p>
+                    <a href="https://circuitdigest.com/microcontroller-projects/line-follower-robot-using-avr-microcontroller-atmega16  "><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>  
+            </div>  
+            <div class="work">
+                <img src="images/3.png" alt="">
+                <div class="layer">
+                    <h3>Personal Resume Page</h3>
+                    <p>Showcasing professional achievements, skills and experiences in a visually compelling way</p>
+                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>    
+            </div>
+        
+            <div class="work">
+                <img src="images/5.png" alt="">
+                <div class="layer">
+                    <h3>Path-following Robot</h3>
+                    <p>Use of Atmel AtMega-8 with IR sensors to develop autonomous systems that seamlessly navigate through designated paths</p>
+                    <a href="https://circuitdigest.com/microcontroller-projects/line-follower-robot-using-avr-microcontroller-atmega16  "><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>  
+            </div>
+            
+            <div class="work">
+                <img src="images/4.png" alt="">
+                <div class="layer">
+                    <h3>Open-source Emulator Vita3K</h3>
+                    <p>Actively testing latest releases of Vita3K with regular error-reporting to developers</p>
+                    <a href="https://vita3k.org/"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>  
+            </div>
+        </div>
+        <a href="#" class="btn"> See more</a>
+    </div>
+</div>
+
+<!--Contact-->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>bhatiaaniket1@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>+91 8544880329</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/aniket-bhatia-83b547282/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/AniketBhatia2091"><i class="fa-brands fa-square-github"></i></a>
+                    <a href="https://discordapp.com/users/aniketbhatia_07502"><i class="fa-brands fa-discord"></i></a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form name="contact_form" method="POST" netlify>
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type='email' name="email" placeholder="Your E-mail" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id='msg'></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var tablinks=document.getElementsByClassName('tab-links')
+    var tabcontents=document.getElementsByClassName('tab-contents')
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove('active-link');
+        }
+
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove('active-tab');
+        }        
+        event.currentTarget.classList.add('active-link');
+        document.getElementById(tabname).classList.add('active-tab');
+    }
+</script>
+
+<script>
+    var sidemenu=document.getElementById('sidemenu');
+
+    function openmenu(){
+        sidemenu.style.right="0";
+        }
+
+    function closemenu(){
+        sidemenu.style.right="-200px";
+    }
+</script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzFeGXcwnzSe_LOXhGYjcEY6gJ6M29aAVqBa-QkQTRvTTRDLbILTPG6OI0eoGSCNmUH/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg=document.getElementById('msg')
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML='Message sent successfully'
+            setTimeout(function(){
+                msg.innerHTML=""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+</html>
