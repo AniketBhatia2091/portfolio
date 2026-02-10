@@ -1,223 +1,671 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Website</title>
-    <link rel="stylesheet" href="./2.css">
-    <script src="https://kit.fontawesome.com/883d459486.js" crossorigin="anonymous"></script>
+    <title>Aniket Bhatia — UI/UX Designer & Creative Developer</title>
+    <meta name="description"
+        content="Portfolio of Aniket Bhatia — UI/UX Designer & Creative Developer crafting beautiful digital experiences.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div id="header">
+    <!-- Scroll Progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Aniket<span>.</span></a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+            <div class="grid-pattern"></div>
+        </div>
         <div class="container">
-            <nav>
-                <ul id="sidemenu">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i> 
-                </ul>
-                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-            </nav>
-            <div class="header-text">
-                <h1>Hi, I am <span>Aniket Bhatia</span></h1>
-                <p>UI/UX DESIGNER</p>
+            <div class="hero-content">
+                <div class="badge">
+                    <span class="badge-dot"></span>
+                    Available for freelance work
+                </div>
+                <p class="hero-greeting">Hello, I'm</p>
+                <h1 class="hero-title">Aniket <span class="highlight">Bhatia</span></h1>
+                <div class="hero-subtitle-wrapper">
+                    <p class="hero-subtitle" id="typingText">UI/UX Designer<span class="cursor">|</span></p>
+                </div>
+                <p class="hero-description">
+                    Crafting beautiful, intuitive digital experiences that blend creativity with functionality.
+                    Passionate about design thinking and innovative solutions.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">View My Work <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    <a href="#" class="btn btn-tertiary"><i class="fas fa-download"></i> Download CV</a>
+                </div>
             </div>
         </div>
-    </div>
+        <a href="#about" class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
 
     <!-- About Section -->
-    <div id="about">
+    <section class="about-section" id="about">
         <div class="container">
-            <div class="row">
-                <div class="about-col-1">
-                    <img src="images/6.png" alt="">
+            <div class="section-header">
+                <span class="section-label">About Me</span>
+                <h2 class="section-title">Who I Am</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-image-wrapper">
+                    <img src="images/hero-bg.jpg" alt="Aniket Bhatia" class="about-image" loading="lazy">
+                    <div class="image-decoration decoration-1"></div>
+                    <div class="image-decoration decoration-2"></div>
                 </div>
-                <div class="about-col-2">
-                    <h1 class="subtitle">About Me</h1>
-                    <p>Welcome to the portfolio of Aniket Bhatia, where creativity meets innovation and passion drives purpose. Aniket is a dynamic individual with a fervent curiosity for exploring the realms of design, technology, and entrepreneurship. With a diverse skill set and an unwavering dedication to excellence, he endeavors to leave an indelible mark on every project he undertakes. Aniket's journey in the world of creativity began with a profound appreciation for aesthetics and functionality. His innate ability to blend artistry with functionality has led him to excel in various fields, including graphic design, web development, and user experience design. Coupled with his relentless pursuit of knowledge, he stays at the forefront of emerging trends, ensuring that his work remains innovative and impactful.</p>
-                    <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                        <p class="tab-links" onclick="opentab('education')">Education</p>
-                        <p class="tab-links" onclick="opentab('Certification')">Certification</p>
-                    </div>
-                    <div class="tab-contents active-tab" id="skills">
-                        <ul>
-                            <li><span>UI/UX Designer</span><br>Designing intuitive and engaging user experiences. Where functionality meets aesthetics</li>
-                            <li><span>Graphic Designer</span><br>Crafting visual stories with creativity and precision. Bringing ideas to life through design</li>
-                            <li><span>Web Development</span><br>Building dynamic web sites with a keen eye for UI/UX design. Bridging functionality and aesthetics seamlessly</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="experience">
-                        <ul>
-                            <li><span>February 2024-September 2024</span><br>As a UI/UX Designer intern at Conceptou, I worked on diverse projects, conducting user research, creating wireframes and prototypes, and collaborating with cross-functional teams to enhance user satisfaction with cohesive, visually appealing designs.</li>
-                             <li><a class="cert-link" href="https://media.licdn.com/dms/image/v2/D562DAQHC8kpGdPfzOg/profile-treasury-image-shrink_1280_1280/profile-treasury-image-shrink_1280_1280/0/1728339740388?e=1737529200&v=beta&t=hb1PSPUzMaaKIsZjQWHLxBqHD6zF6XL8EtoprS0LLHg"><span>
-                                &#10141;&nbsp;Certificate of Completion</span></a></li>
-                             <li><a class="cert-link" href="https://media.licdn.com/dms/image/v2/D562DAQE3-9TCyAIMUQ/profile-treasury-image-shrink_1280_1280/profile-treasury-image-shrink_1280_1280/0/1728339892056?e=1737529200&v=beta&t=uCICyeTmewaavy3g0oTSuqy0iQyZkfacNBoZG6odFMg"><span>
-                                &#10141;&nbsp;Certificate of Appreciation</span></a></li>
-                             <li><a class="cert-link" href="https://media.licdn.com/dms/image/v2/D562DAQHKYMMaQow_ew/profile-treasury-image-shrink_1280_1280/profile-treasury-image-shrink_1280_1280/0/1728339912209?e=1737529200&v=beta&t=lpk9lrXZFPwptiCmrXkfQrKD1LSldw4vaKF2cpN3Qdk"><span>
-                                &#10141;&nbsp;Letter of Recommendation</span></a></li>
-                            </ul>
-                    </div>
-                    <div class="tab-contents" id="education">
-                        <ul>
-                            <li><span>2016-2022</span><br>Completed High School Education at Harkishan Public School</li>
-                            <li><span>2023-Present</span><br>Currently pursuing B.E. CSE at Chitkara University</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="Certification">
-                        <ul>
-                            <li><a class="cert-link" href="https://coursera.org/share/4b6efa47312594566b32e64315efc819"><span>&#10141;&nbsp;Conduct UX Research and Test Early Concepts</span></a></li>
-                            <li><a class="cert-link" href="https://www.coursera.org/account/accomplishments/verify/TK2NU6A66H3Z"><span>&#10141;&nbsp;Foundations of User Experience (UX) Design</span></a></li>
-                            <li><a class="cert-link" href="https://coursera.org/share/da17382f329fd4ef06cc071c6973cb3d"><span>&#10141;&nbsp;Create High-Fidelity Designs and Prototypes in Figma</span></a></li>
-                            <li><a class="cert-link" href="https://coursera.org/share/9ed9df1bf472c6e49baa09941a554eea"><span>&#10141;&nbsp;Build Dynamic User Interfaces (UI) for Websites</span></a></li>
-                            <li><a class="cert-link" href="https://coursera.org/share/69160f75e42065d60cce3198f6876b7a"><span>&#10141;&nbsp;Start the UX Design Process: Empathize, Define, and Ideate</span></a></li>
-                            <li><a class="cert-link" href="https://coursera.org/share/3e262033d78a7d0a974f466ebf2e8a58"><span>&#10141;&nbsp;Design a User Experience for Social Good & Prepare for Jobs</span></a></li>
-                            <li><a class="cert-link" href="https://coursera.org/share/e892c397fb5ec9a8412dbe04c923f048"><span>&#10141;&nbsp;Build Wireframes and Low-Fidelity Prototypes</span></a></li>
+                <div>
+                    <p class="about-text">
+                        I'm a passionate <span class="highlight-text">UI/UX Designer</span> and Creative Developer based
+                        in India.
+                        I specialize in crafting beautiful, intuitive digital experiences that blend creativity with
+                        functionality.
+                    </p>
+                    <p class="about-text">
+                        With a keen eye for design and a deep understanding of user behavior, I create interfaces that
+                        not only look stunning but also provide seamless user experiences.
+                    </p>
 
-                        </ul>
+                    <!-- Tabs -->
+                    <div class="tabs">
+                        <div class="tab-buttons">
+                            <button class="tab-button active" data-tab="experience">Experience</button>
+                            <button class="tab-button" data-tab="education">Education</button>
+                            <button class="tab-button" data-tab="skills-tab">Skills</button>
+                            <button class="tab-button" data-tab="certifications">Certs</button>
+                        </div>
+
+                        <!-- Experience Tab -->
+                        <div class="tab-content active" id="experience">
+                            <div class="experience-card">
+                                <div class="experience-icon"><i class="fas fa-briefcase"></i></div>
+                                <div class="experience-info">
+                                    <h4>UI/UX Designer</h4>
+                                    <p class="company">Freelance</p>
+                                    <p class="date">2023 – Present</p>
+                                    <p class="description">Creating modern, user-centric interfaces for clients across
+                                        various industries. Specializing in responsive web design and brand identity.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="experience-card">
+                                <div class="experience-icon"><i class="fas fa-laptop-code"></i></div>
+                                <div class="experience-info">
+                                    <h4>Front-End Developer</h4>
+                                    <p class="company">Self-employed</p>
+                                    <p class="date">2022 – Present</p>
+                                    <p class="description">Building responsive websites and web applications using
+                                        modern technologies. Focus on clean code and optimal performance.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Education Tab -->
+                        <div class="tab-content" id="education">
+                            <div class="education-card">
+                                <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
+                                <div class="education-info">
+                                    <h4>B.E. Computer Science Engineering</h4>
+                                    <p class="school">Chitkara University</p>
+                                    <p class="year">2023 – Present</p>
+                                </div>
+                            </div>
+                            <div class="education-card">
+                                <div class="education-icon"><i class="fas fa-school"></i></div>
+                                <div class="education-info">
+                                    <h4>Higher Secondary Education</h4>
+                                    <p class="school">Board of Secondary Education</p>
+                                    <p class="year">2021 – 2023</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Skills Tab -->
+                        <div class="tab-content" id="skills-tab">
+                            <div class="skill-card">
+                                <div class="skill-icon"><i class="fas fa-palette"></i></div>
+                                <div class="skill-info">
+                                    <h4>Design Tools</h4>
+                                    <p>Figma, Adobe XD, Photoshop, Illustrator, Canva</p>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon"><i class="fas fa-code"></i></div>
+                                <div class="skill-info">
+                                    <h4>Development</h4>
+                                    <p>HTML, CSS, JavaScript, React, Node.js</p>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon"><i class="fas fa-database"></i></div>
+                                <div class="skill-info">
+                                    <h4>Other Skills</h4>
+                                    <p>Git, Responsive Design, SEO, Performance Optimization</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Certifications Tab -->
+                        <div class="tab-content" id="certifications">
+                            <div class="certifications-list">
+                                <a href="https://coursera.org/verify/KPABH6N4RL4Q" target="_blank" class="cert-item">
+                                    <i class="fas fa-certificate"></i>
+                                    <span>Foundations of User Experience (UX) Design — Google</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://coursera.org/verify/D3YZEPFAH8FS" target="_blank" class="cert-item">
+                                    <i class="fas fa-certificate"></i>
+                                    <span>Start the UX Design Process — Google</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://coursera.org/verify/YKO4LZMMWT07" target="_blank" class="cert-item">
+                                    <i class="fas fa-certificate"></i>
+                                    <span>Build Wireframes and Low-Fidelity Prototypes — Google</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://coursera.org/verify/BNJYBYFLWFP2" target="_blank" class="cert-item">
+                                    <i class="fas fa-certificate"></i>
+                                    <span>Conduct UX Research and Test Early Concepts — Google</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://coursera.org/verify/PJHCUV8G7VWH" target="_blank" class="cert-item">
+                                    <i class="fas fa-certificate"></i>
+                                    <span>Create High-Fidelity Designs and Prototypes in Figma — Google</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://coursera.org/verify/U3MDFLQVYCVQ" target="_blank" class="cert-item">
+                                    <i class="fas fa-certificate"></i>
+                                    <span>Build Dynamic User Interfaces (UI) for Websites — Google</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://coursera.org/verify/PJHCUV8G7VWH" target="_blank" class="cert-item">
+                                    <i class="fas fa-certificate"></i>
+                                    <span>Design a User Experience for Social Good — Google</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-label">My Skills</span>
+                <h2 class="section-title">Technical Expertise</h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">A comprehensive overview of my design and development capabilities</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-palette" style="color: var(--accent-light); margin-right: 8px;"></i>Design</h3>
+                    <div class="skill-item">
+                        <div class="skill-header"><span>Figma</span><span>95%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header"><span>Adobe XD</span><span>88%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="88"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header"><span>Photoshop</span><span>85%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header"><span>Illustrator</span><span>75%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-code" style="color: var(--accent-light); margin-right: 8px;"></i>Development
+                    </h3>
+                    <div class="skill-item">
+                        <div class="skill-header"><span>HTML / CSS</span><span>92%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="92"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header"><span>JavaScript</span><span>80%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header"><span>React</span><span>70%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="70"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header"><span>Node.js</span><span>65%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="65"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-lightbulb" style="color: var(--accent-light); margin-right: 8px;"></i>Other
+                    </h3>
+                    <div class="skill-item">
+                        <div class="skill-header"><span>UI/UX Design</span><span>95%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header"><span>Responsive Design</span><span>90%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header"><span>SEO</span><span>80%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header"><span>Git / Version Control</span><span>85%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Services Section -->
-    <div id="services">
+    <section class="services-section" id="services">
         <div class="container">
-            <h1 class="sub-title">My Services</h1>
-            <div class="services-list">
-                <div>
-                    <i class="fa-solid fa-code"></i>
-                    <h2>Web Design</h2>
-                    <p>Proficient in creating engaging and user-friendly digital experiences through thoughtful design</p>
-                    <a href="https://www.coursera.org/articles/web-designer">Learn more</a>
+            <div class="section-header centered">
+                <span class="section-label">What I Do</span>
+                <h2 class="section-title">Services designed to<br>accelerate your growth</h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">End-to-end digital solutions tailored to your unique goals and challenges
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-bg service-bg-1"></div>
+                    <div class="service-icon service-icon-1"><i class="fas fa-pen-nib"></i></div>
+                    <h3>UI/UX Design</h3>
+                    <p>Creating intuitive and visually stunning interfaces that enhance user engagement and drive
+                        conversions through research-backed design decisions.</p>
                 </div>
-                <div>
-                    <i class="fa-solid fa-crop"></i>
-                    <h2>UI/UX Design</h2>
-                    <p>Versatile UI/UX that helps in transforming complex ideas into seamless and visually appealing user interfaces.</p>
-                    <a href="https://www.freecodecamp.org/news/ui-ux-design-guide/">Learn more</a>
+                <div class="service-card">
+                    <div class="service-bg service-bg-2"></div>
+                    <div class="service-icon service-icon-2"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Web Development</h3>
+                    <p>Responsive, lightning-fast websites engineered for performance, accessibility, and seamless user
+                        experiences across all devices.</p>
                 </div>
-                <div>
-                    <i class="fa-brands fa-app-store-ios"></i>
-                    <h2>Design Thinking Expert</h2>
-                    <p>Innovative design thinker adept at leveraging empathy, ideation, and prototyping to solve complex problems, fostering creative solutions.</p>
-                    <a href="https://www.coursera.org/programs/design-year-1-xdgx3/specializations/uva-darden-design-thinking">Learn more</a>
-                </div>                    
+                <div class="service-card">
+                    <div class="service-bg service-bg-3"></div>
+                    <div class="service-icon service-icon-3"><i class="fas fa-paint-brush"></i></div>
+                    <h3>Brand Identity</h3>
+                    <p>Cohesive visual systems and brand strategies that make your business instantly recognizable and
+                        deeply memorable to your audience.</p>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-label">My Journey</span>
+                <h2 class="section-title">Experience & Education</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+
+                <div class="timeline-item timeline-left scroll-animate">
+                    <div class="timeline-icon timeline-icon-work"><i class="fas fa-briefcase"></i></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 – Present</span>
+                        <h3>UI/UX Designer</h3>
+                        <h4>Freelance</h4>
+                        <p>Creating user-centered designs for various clients. Specializing in web and mobile app design
+                            with a focus on conversion optimization.</p>
+                        <div class="tags">
+                            <span class="tag tag-rose">Figma</span>
+                            <span class="tag tag-purple">UI Design</span>
+                            <span class="tag tag-indigo">Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item timeline-right scroll-animate">
+                    <div class="timeline-icon timeline-icon-work"><i class="fas fa-laptop-code"></i></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022 – Present</span>
+                        <h3>Front-End Developer</h3>
+                        <h4>Self-employed</h4>
+                        <p>Building responsive websites using modern technologies. Focus on clean code, performance
+                            optimization, and accessibility.</p>
+                        <div class="tags">
+                            <span class="tag tag-rose">HTML/CSS</span>
+                            <span class="tag tag-purple">JavaScript</span>
+                            <span class="tag tag-indigo">React</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item timeline-left scroll-animate">
+                    <div class="timeline-icon timeline-icon-education"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 – Present</span>
+                        <h3>B.E. Computer Science Engineering</h3>
+                        <h4>Chitkara University</h4>
+                        <p>Pursuing Bachelor of Engineering with focus on software development and design thinking.</p>
+                        <div class="tags">
+                            <span class="tag tag-rose">Computer Science</span>
+                            <span class="tag tag-purple">Programming</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item timeline-right scroll-animate">
+                    <div class="timeline-icon timeline-icon-education"><i class="fas fa-school"></i></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2021 – 2023</span>
+                        <h3>Higher Secondary Education</h3>
+                        <h4>Board of Secondary Education</h4>
+                        <p>Completed higher secondary education with focus on science and mathematics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Portfolio Section -->
-    <div id="portfolio">
+    <section class="portfolio-section" id="portfolio">
         <div class="container">
-            <h1 class="sub-title">My Work</h1>  
-            <div class="work-list">
-                <div class="work">
-                    <img src="images/May Lord Ganesha remove all obstacles and bless you with wisdom and success 1 copy.jpg" alt="">
-                    <div class="layer">
-                        <h3>Happy Ganesh Chaturthi</h3>
-                        <p>May the divine blessings of Lord Ganesha bring you endless happiness and peace.</p>
-                    </div>  
-                </div>
-                <div class="work">
-                    <img src="images/Screenshot 2024-08-19 175130.png" alt="">
-                    <div class="layer">
-                        <h3>Happy Independence Day!</h3>
-                        <p>May the spirit of freedom and the pride of our nation fill your heart with joy. Let’s honor the sacrifices of our heroes and work together for a brighter, united future.</p>
-                    </div>  
-                </div>
-                <div class="work">
-                    <img src="images/2.png" alt="">
-                    <div class="layer">
-                        <h3>The future is technology</h3>
-                        <p>Technology is the canvas of the future...</p>
-                    </div>
-                </div>  
-                <div class="work">
-                    <img src="images/3.png" alt="">
-                    <div class="layer">
-                        <h3>Hack Your Brain</h3>
-                        <p>Unlocking innovation, one design thinking session at a time</p>
-                    </div>    
-                </div>
-                <div class="work">
-                    <img src="images/Group 2198810.png" alt="">
-                    <div class="layer">
-                        <h3>Web design</h3>
-                        <p>Designing digital experiences, hacking the norm.</p>
-                    </div>  
-                </div>
-                <div class="work">
-                    <img src="images/4.png" alt="">
-                    <div class="layer">
-                        <h3>Coming Soon</h3>
-                        <p>Something big is coming... Stay tuned!</p>
-                    </div>  
-                </div>
-                
-                
+            <div class="section-header centered">
+                <span class="section-label">Featured Work</span>
+                <h2 class="section-title">A showcase of my recent<br>projects and creative solutions</h2>
+                <div class="section-line"></div>
             </div>
-            <a href="#" class="btn">See more</a>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ui-ux">UI/UX Design</button>
+                <button class="filter-btn" data-filter="graphic">Graphic Design</button>
+                <button class="filter-btn" data-filter="web">Web Design</button>
+                <button class="filter-btn" data-filter="branding">Branding</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item scroll-animate" data-category="graphic">
+                    <img src="images/Ganeshaproject.jpg" alt="Happy Ganesh Chaturthi" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-icon"><i class="fas fa-eye"></i></div>
+                    </div>
+                    <div class="portfolio-tags"><span class="tag">Branding</span></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">Graphic Design</span>
+                        <h3>Happy Ganesh Chaturthi</h3>
+                        <p>Festival greeting design celebrating Lord Ganesha with divine blessings and vibrant
+                            aesthetics.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item scroll-animate" data-category="graphic">
+                    <img src="images/15 aug.jpg" alt="Independence Day Campaign" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-icon"><i class="fas fa-eye"></i></div>
+                    </div>
+                    <div class="portfolio-tags"><span class="tag">Canva</span><span class="tag">Social Media</span>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">Graphic Design</span>
+                        <h3>Independence Day Campaign</h3>
+                        <p>Patriotic design honoring the spirit of freedom and celebrating national pride with modern
+                            aesthetics.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item scroll-animate" data-category="ui-ux">
+                    <img src="images/MacBook Air - 1.png" alt="Future Tech Dashboard" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-icon"><i class="fas fa-eye"></i></div>
+                    </div>
+                    <div class="portfolio-tags"><span class="tag">Figma</span><span class="tag">UI Design</span></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">UI/UX Design</span>
+                        <h3>Future Tech Dashboard</h3>
+                        <p>Modern dashboard UI exploring emerging technologies with clean, intuitive interface design.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item scroll-animate" data-category="branding">
+                    <img src="images/Diwali project.jpg" alt="Diwali Celebration" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-icon"><i class="fas fa-eye"></i></div>
+                    </div>
+                    <div class="portfolio-tags"><span class="tag">Branding</span></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">Branding</span>
+                        <h3>Diwali Celebration</h3>
+                        <p>Festive design capturing the warmth and joy of Diwali with modern design elements.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item scroll-animate" data-category="web">
+                    <img src="images/Create Presentation-Style UI Frame (Copy) (1).png" alt="Portfolio Website"
+                        loading="lazy">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-icon"><i class="fas fa-eye"></i></div>
+                    </div>
+                    <div class="portfolio-tags"><span class="tag">HTML/CSS</span><span class="tag">JavaScript</span>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">Web Design</span>
+                        <h3>Portfolio Website</h3>
+                        <p>A modern, responsive portfolio website showcasing creative work and technical skills.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item scroll-animate" data-category="graphic">
+                    <img src="images/Copy of White and Black Tech Professional Resume.png" alt="Professional Resume"
+                        loading="lazy">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-icon"><i class="fas fa-eye"></i></div>
+                    </div>
+                    <div class="portfolio-tags"><span class="tag">Canva</span></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">Graphic Design</span>
+                        <h3>Professional Resume</h3>
+                        <p>Clean, modern resume design with professional layout and typography.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-background">
+            <div class="blob-cta-1"></div>
+            <div class="blob-cta-2"></div>
+        </div>
+        <div class="container">
+            <div class="cta-card">
+                <h2>Let's build something amazing together</h2>
+                <p>Whether you need a stunning website, a complete brand overhaul, or a user experience that converts —
+                    I'm here to help bring your vision to life.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Start a project <i class="fas fa-arrow-right"></i></a>
+                    <a href="#portfolio" class="btn btn-secondary">View my work</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
-    <div id="contact">
+    <section class="contact-section" id="contact">
         <div class="container">
-            <div class="row">
-                <div class="contact-left">
-                    <h1 class="sub-title">Contact Me</h1>
-                    <p><i class="fa-solid fa-paper-plane"></i>aniket.bhatia0329@gmail.com</p>
-                    <p><i class="fa-solid fa-phone"></i>+91 8544880329</p>
-                    <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/aniket-bhatia-83b547282/"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://github.com/AniketBhatia2091"><i class="fa-brands fa-square-github"></i></a>
-                        <a href="https://discordapp.com/users/aniketbhatia_07502"><i class="fa-brands fa-discord"></i></a>
+            <div class="section-header centered">
+                <span class="section-label">Get In Touch</span>
+                <h2 class="section-title">Let's start a conversation</h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Have a project in mind? Let's discuss how I can help you achieve your goals
+                </p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Feel free to reach out! I'm always open to discussing new projects, creative ideas, or
+                        opportunities.</p>
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <span class="contact-label">Email</span>
+                                <p class="contact-value">aniket.bhatia0329@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <div>
+                                <span class="contact-label">Phone</span>
+                                <p class="contact-value">+91 8544880329</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <span class="contact-label">Location</span>
+                                <p class="contact-value">India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/aniket-bhatia-b03a6125a/" target="_blank"
+                            class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/AniketBhatia2091" target="_blank" class="social-link"
+                            aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://discord.com/channels/@me" target="_blank" class="social-link"
+                            aria-label="Discord"><i class="fab fa-discord"></i></a>
                     </div>
                 </div>
-                <div class="contact-right">
-                    <form name="contact_form" method="POST" netlify>
-                        <h1 class="sub-title">Did we miss anything?</h1>
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type='email' name="email" placeholder="Your E-mail" required>
-                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn btn2">Submit</button>
+                <div class="contact-form-wrapper">
+                    <h3>Send a Message</h3>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            Send Message <i class="fas fa-arrow-right"></i>
+                        </button>
                     </form>
-                    <span id='msg'></span>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <script>
-        var tablinks = document.getElementsByClassName('tab-links')
-        var tabcontents = document.getElementsByClassName('tab-contents')
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-gradient"></div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Aniket Bhatia</h3>
+                    <p>UI/UX Designer & Creative Developer crafting beautiful digital experiences with passion and
+                        precision.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/aniket-bhatia-b03a6125a/" target="_blank"
+                            class="footer-social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/AniketBhatia2091" target="_blank" class="footer-social-link"
+                            aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://discord.com/channels/@me" target="_blank" class="footer-social-link"
+                            aria-label="Discord"><i class="fab fa-discord"></i></a>
+                    </div>
+                    <div class="footer-contact">
+                        <p>aniket.bhatia0329@gmail.com</p>
+                        <p>+91 8544880329</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Aniket Bhatia. All rights reserved.</p>
+                <p class="footer-heart">Designed & Built with <i class="fas fa-heart"></i> by Aniket</p>
+            </div>
+        </div>
+    </footer>
 
-        function opentab(tabname){
-            for(tablink of tablinks){
-                tablink.classList.remove('active-link');
-            }
-
-            for(tabcontent of tabcontents){
-                tabcontent.classList.remove('active-tab');
-            }        
-            event.currentTarget.classList.add('active-link');
-            document.getElementById(tabname).classList.add('active-tab');
-        }
-
-        var sidemenu = document.getElementById('sidemenu');
-        function openmenu(){
-            sidemenu.style.right = "0";
-        }
-
-        function closemenu(){
-            sidemenu.style.right = "-200px";
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
+
 </html>
