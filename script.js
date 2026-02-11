@@ -2,27 +2,52 @@
    Portfolio — Apex-Inspired JavaScript
    ======================================== */
 
-// --- Scroll Progress Bar ---
+// --- Consolidated Scroll Handler ---
 const scrollProgress = document.getElementById('scroll-progress');
-window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = (scrollTop / docHeight) * 100;
-    if (scrollProgress) scrollProgress.style.width = progress + '%';
-});
-
-// --- Sticky Navbar ---
 const navbar = document.getElementById('navbar');
-let lastScroll = 0;
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-    if (currentScroll > 50) {
+let ticking = false;
+
+function handleScroll() {
+    const scrollTop = window.scrollY;
+
+    // Scroll progress bar
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (scrollProgress) scrollProgress.style.width = (scrollTop / docHeight) * 100 + '%';
+
+    // Sticky navbar
+    if (scrollTop > 50) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
-    lastScroll = currentScroll;
+
+    // Active nav link
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (scrollTop >= sectionTop) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+        }
+    });
+
+    ticking = false;
+}
+
+window.addEventListener('scroll', () => {
+    if (!ticking) {
+        requestAnimationFrame(handleScroll);
+        ticking = true;
+    }
 });
 
 // --- Mobile Menu ---
@@ -52,27 +77,6 @@ if (hamburger && navMenu) {
         });
     });
 }
-
-// --- Active Nav Link on Scroll ---
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (window.scrollY >= sectionTop) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-            link.classList.add('active');
-        }
-    });
-});
 
 // --- Typing Animation ---
 const typingElement = document.getElementById('typingText');
@@ -195,6 +199,16 @@ scrollAnimateElements.forEach(el => {
     scrollObserver.observe(el);
 });
 
+// --- EmailJS Initialization ---
+// ⚠️ REPLACE these 3 values with your own from https://www.emailjs.com/
+const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';   // Account → API Keys
+const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';   // Email Services tab
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'; // Email Templates tab
+
+if (typeof emailjs !== 'undefined') {
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+}
+
 // --- Contact Form ---
 const contactForm = document.getElementById('contactForm');
 
@@ -202,22 +216,58 @@ if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const formData = new FormData(contactForm);
-        const data = Object.fromEntries(formData.entries());
-
-        console.log('Form submitted:', data);
-
-        // Show success
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-        submitBtn.style.background = '#10b981';
 
-        setTimeout(() => {
-            submitBtn.innerHTML = originalText;
-            submitBtn.style.background = '';
-            contactForm.reset();
-        }, 3000);
+        // Show loading state
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.7';
+
+        // Check if EmailJS is configured
+        if (EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
+            // Not configured — show warning
+            console.warn('EmailJS not configured. Replace the placeholder keys in script.js.');
+            submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Setup Required';
+            submitBtn.style.background = '#f59e0b';
+
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.style.background = '';
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = '1';
+            }, 3000);
+            return;
+        }
+
+        // Send via EmailJS
+        emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm)
+            .then(() => {
+                // Success
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+                submitBtn.style.background = '#10b981';
+                contactForm.reset();
+
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                }, 3000);
+            })
+            .catch((error) => {
+                // Error
+                console.error('EmailJS Error:', error);
+                submitBtn.innerHTML = '<i class="fas fa-times"></i> Failed to Send';
+                submitBtn.style.background = '#ef4444';
+
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                }, 3000);
+            });
     });
 }
 
