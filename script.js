@@ -40,6 +40,9 @@ function handleScroll() {
         }
     });
 
+    // Animate skill bars on scroll (consolidated here instead of separate listener)
+    animateSkillBars();
+
     ticking = false;
 }
 
@@ -151,7 +154,7 @@ function animateSkillBars() {
     });
 }
 
-window.addEventListener('scroll', animateSkillBars);
+// Skill bars animate on load; scroll-triggered animation is handled inside handleScroll()
 window.addEventListener('load', animateSkillBars);
 
 // --- Portfolio Filters ---

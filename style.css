@@ -268,18 +268,6 @@ p {
   transform: translateY(-2px);
 }
 
-.btn-tertiary {
-  background: transparent;
-  color: var(--text-primary);
-  border: 1.5px solid var(--border);
-}
-
-.btn-tertiary:hover {
-  border-color: var(--accent);
-  color: var(--accent-light);
-  transform: translateY(-2px);
-}
-
 .btn-full {
   width: 100%;
   justify-content: center;
